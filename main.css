@@ -1,13 +1,29 @@
+* {
+	font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif; 
+}
+
 div {
 	width: 400px;
 }
 
-.hidden {
-	display: none;
+button {
+	border-radius: 50%;
+	background-color: brown;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 
-* {
-	font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif; 
+h1 {
+	color: brown;
+}
+
+.hidden {
+	display: none;
 }
 
 .js-choices-class {
@@ -18,5 +34,16 @@ div {
 .js-info-box {
     border-style: solid;
     background-color: rgb(226, 226, 207);
+    display: inline-block;
+}
+
+.red {
+	color: red;
+	display: inline-block;
+}
+
+.green {
+	color: green;
+	display: inline-block;
 }
 

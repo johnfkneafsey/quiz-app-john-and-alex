@@ -61,9 +61,9 @@ function hideStartButton (state) {
 
 function displayQuestionCount (state) {
 	if (state.questionNumber < state.questionsArray.length) {
-		$('.js-question-count-class').html('<p>Question: ' + (state.questionNumber + 1) + ' of 5</p>');		
+		$('.js-question-count-class').html('<h4>Question: ' + (state.questionNumber + 1) + ' of 5</h4>');		
 	} else {
-		$('.js-question-count-class').html('<p>Question: ' + (state.questionNumber) + ' of 5</p>');			
+		$('.js-question-count-class').html('<h4>Question: ' + (state.questionNumber) + ' of 5</h4>');			
 	}
 }
 
@@ -81,8 +81,12 @@ function clearChoices () {
 	$('.js-choices-class').html('');	
 }
 
+function clearQuestion () {
+	$('.js-question-class').addClass('hidden');
+}
+
 function updateScore (state) {
-	$('.js-score-class').html('<p>Score: ' + state.correctAnswerCounter + ' out of ' + state.questionNumber + '</p>');
+	$('.js-score-class').html('<h4>Score: ' + '<div class="green">' + state.correctAnswerCounter + '</div>' + ' out of ' + '<div class="red">' + state.questionNumber + '</div></h4>');
 }
 
 function createRestartButton () {
@@ -118,6 +122,7 @@ $('.js-choices-class').submit(function(event) {
 		questionCounter(state);
 		evaluateAnswer(state);
 		clearChoices();
+		clearQuestion();
 		displayQuestionCount(state);
 		updateScore(state);
 		createRestartButton();
